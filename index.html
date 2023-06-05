@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Analysis Web App</title>
+</head>
+<style>
+    .heading{
+        text-align: center;
+        color: cadetblue;
+        font-size: 100px;
+    }
+
+
+    input[type="file"] {
+    width: 600px;
+    background-color: rgb(156, 169, 180);
+    }
+
+    .fileupload{
+        font-size: 40px;
+        width:1000px;
+    }
+
+    input[type="submit"] {
+    font-size: 40px;
+    width: 200px;
+    margin-left: 400px;
+    background-color: rgb(237, 239, 243);}
+
+</style>
+<body>
+    <p class='heading'>Data Analysis Web App</p>
+    <form action="{{ url_for('upload_dataset') }}" method="POST" enctype="multipart/form-data" class="form1">
+        <input type="file" name="dataset" required class="fileupload">
+        <input type="submit" value="Upload">
+    </form>
+</body>
+</html>
+

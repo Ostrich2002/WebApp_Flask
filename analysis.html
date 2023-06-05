@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Analysis</title>
+</head>
+<style>
+    .heading{
+        text-align: center;
+        font-size: 100px;
+        color: cadetblue;
+    }
+    .label1{
+        font-size: 40px;
+        color:cadetblue;
+    }
+    .options{
+        width:400px;
+        height:60px;
+    }
+    .submitbutton{
+        font-size: 20px;
+        margin-left: 100px;
+        height: 40px;
+        width:200px;
+    }
+    /* .option1{
+        width:50px;
+        height:40px;
+        font-size: 30px;
+    } */
+</style>
+<body>
+    <p class="heading">Data Analysis</p>
+    <form action="{{ url_for('perform_analysis') }}" method="POST">
+        <label for="algorithm" class="label1">Select Algorithm:</label>
+        <select name="algorithm" id="algorithm" class="optios" style="width:300px;height:40px;font-size: 30px;">
+            <option value="linear_regression" class="option1" >Linear Regression</option>
+            <option value="pcaPCA" class="option1">PCA</option><!--this option or line of code was added later on-->
+        </select>
+        <input type="submit" value="Perform Analysis" class="submitbutton">
+    </form>
+</body>
+</html>

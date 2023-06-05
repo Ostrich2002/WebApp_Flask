@@ -1,0 +1,48 @@
+<!--this file was created afterwords-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PCA Result</title>
+</head>
+<body>
+  <h1>PCA Result</h1>
+  
+  <h2>Principal Components</h2>
+  <table>
+    <thead>
+      <tr>
+        {% for i in range(principal_components[0]|length) %}
+          <th>PC {{ i+1 }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for pc in principal_components %}
+        <tr>
+          {% for value in pc %}
+            <td>{{ value }}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+  <h2>Explained Variance Ratio</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Principal Component</th>
+        <th>Explained Variance Ratio</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in range(explained_variance_ratio|length) %}
+        <tr>
+          <td>PC {{ i+1 }}</td>
+          <td>{{ explained_variance_ratio[i] }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>
